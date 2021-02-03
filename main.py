@@ -1,10 +1,15 @@
 from bs4 import BeautifulSoup
-import requests
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+import requests
 import time
 import random
 import os
+import emoji
+
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
@@ -23,7 +28,6 @@ def account_get():
         acc = email + ':' + password
         return acc
 
-
 def account_login(_browser, account):   # ЛОГИНИМСЯ В АКК
     acc = account.split(':')
     _email = acc[0]
@@ -31,9 +35,9 @@ def account_login(_browser, account):   # ЛОГИНИМСЯ В АКК
     _browser.find_element_by_name('email').send_keys(_email)
     _browser.find_element_by_name('password').send_keys(_password)
     _browser.find_element_by_xpath('//button[@class="button t-blue s-a"]').click()
-    time.sleep(30)
+    time.sleep(10)
 
-def create_bday_message():
+def create_bday_message():   # Пока не используется, потому что нет нормальных поздравлений. Надо найти ресурс и спарсить в список.
     bday_textlist = []
     folder = os.getcwd()  # путь к рабочей директории
     file = open(folder + '/bday_text.txt', 'r', encoding='utf-8')  # файл с поздравлениями
@@ -46,16 +50,31 @@ def create_bday_message():
             bday_textlist.remove(string)
     return bday_message
 
+def check_bday_today_and_send_message(_browser):   # TODO: добавить нормальных поздравлений и вывести через _message
+    soup = BeautifulSoup(_browser.page_source, 'html.parser')
+    orange_blocks = soup.findAll('div', class_='c-block cg-2 t-2 t-orange message')
+    print(len(orange_blocks))
+    for block in orange_blocks:
+        bday_today = block.find('div', class_='b-important-theme').text
+        bday_name = block.find('div', class_='b-important-title').text
+        if 'Сегодня' in bday_today:
+            print('Сегодня есть именниники:', bday_name)
+            bday_input = WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//textarea[@name='message_text']"))).send_keys('С Днём Рождения!')
+            button_submit = WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//input[@type='submit']"))).click()
+            print('Отправил поздравление!')
+            time.sleep(5)
+            break
+
 def main():
     url_vkp = 'https://vkp.sitesoft.su/'
     browser = webdriver.Chrome()
     browser.get(url_vkp)
-    browser.implicitly_wait(30)
-    time.sleep(10)
+    browser.implicitly_wait(10)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     account_login(browser, account_get())
-    orange_blocks = soup.findAll('div', class_='c-block cg-2 t-2 t-orange message')
+    check_bday_today_and_send_message(browser)
 
+    print('Готово :)')
 
 main()
