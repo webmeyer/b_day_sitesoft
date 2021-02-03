@@ -23,6 +23,16 @@ def account_get():
         acc = email + ':' + password
         return acc
 
+
+def account_login(_browser, account):   # ЛОГИНИМСЯ В АКК
+    acc = account.split(':')
+    _email = acc[0]
+    _password = acc[-1]
+    _browser.find_element_by_name('email').send_keys(_email)
+    _browser.find_element_by_name('password').send_keys(_password)
+    _browser.find_element_by_xpath('//button[@class="button t-blue s-a"]').click()
+    time.sleep(30)
+
 def create_bday_message():
     bday_textlist = []
     folder = os.getcwd()  # путь к рабочей директории
@@ -34,10 +44,18 @@ def create_bday_message():
     for string in bday_textlist:   # Удаляем поздравление из списка
         if bday_message_raw in string:
             bday_textlist.remove(string)
-
     return bday_message
 
 def main():
     url_vkp = 'https://vkp.sitesoft.su/'
-    create_bday_message()
+    browser = webdriver.Chrome()
+    browser.get(url_vkp)
+    browser.implicitly_wait(30)
+    time.sleep(10)
+
+    soup = BeautifulSoup(browser.page_source, 'html.parser')
+    account_login(browser, account_get())
+    orange_blocks = soup.findAll('div', class_='c-block cg-2 t-2 t-orange message')
+
+
 main()
