@@ -58,12 +58,15 @@ def check_bday_today_and_send_message(_browser):   # TODO: добавить но
         bday_today = block.find('div', class_='b-important-theme').text
         bday_name = block.find('div', class_='b-important-title').text
         if 'Сегодня' in bday_today:
-            print('Сегодня есть именниники:', bday_name)
-            bday_input = WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//textarea[@name='message_text']"))).send_keys('С Днём Рождения!')
-            button_submit = WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//input[@type='submit']"))).click()
+            print('Поздравляем:', bday_name)
+            WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//textarea[@name='message_text']"))).send_keys('С Днём Рождения!')
+            WebDriverWait(_browser, 5).until(EC.element_to_be_clickable((By.XPATH, "//div[@class='b-comment']//input[@type='submit']"))).click()
             print('Отправил поздравление!')
             time.sleep(5)
-            break
+        else:
+            print('ДР нет :(')
+            continue
+
 
 def main():
     url_vkp = 'https://vkp.sitesoft.su/'
