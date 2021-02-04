@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'proto3.ui'
+# Form implementation generated from reading ui file 'proto4.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -14,45 +14,51 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(579, 238)
+        MainWindow.resize(600, 300)
         MainWindow.setMouseTracking(True)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: #696969")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(260, 120, 301, 71))
+        self.pushButton.setGeometry(QtCore.QRect(360, 120, 221, 91))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setBold(False)
         font.setWeight(50)
+
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.pushButton.setStyleSheet("background-color: orange;")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(20, 120, 221, 71))
+        self.pushButton_2.setGeometry(QtCore.QRect(360, 30, 221, 71))
         self.pushButton_2.setStyleSheet("background-color: #ADFF2F")
         self.pushButton_2.setObjectName("pushButton_2")
 
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(26, 9, 531, 91))
+        self.label.setGeometry(QtCore.QRect(30, 30, 281, 181))
         self.label.setTabletTracking(False)
-        self.label.setStyleSheet("font-size: 18px")
+        self.label.setFocusPolicy(QtCore.Qt.NoFocus)
         self.label.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.label.setStyleSheet("font-size: 18px; text-position: center; text-align: center;")
         self.label.setFrameShape(QtWidgets.QFrame.Box)
         self.label.setFrameShadow(QtWidgets.QFrame.Plain)
         self.label.setLineWidth(1)
         self.label.setMidLineWidth(0)
         self.label.setTextFormat(QtCore.Qt.RichText)
-        self.label.setScaledContents(True)
+        self.label.setScaledContents(False)
+        self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label.setWordWrap(True)
         self.label.setTextInteractionFlags(QtCore.Qt.TextEditable|QtCore.Qt.TextSelectableByMouse)
         self.label.setObjectName("label")
 
+        self.label.raise_()
+        self.pushButton.raise_()
+        self.pushButton_2.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 579, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")

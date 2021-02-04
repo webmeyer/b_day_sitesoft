@@ -8,8 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import random
 import os
-from test_ui import *
-
+from gui import *
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")

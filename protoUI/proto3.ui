@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
-    <height>238</height>
+    <width>600</width>
+    <height>287</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -26,8 +26,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>120</y>
+      <x>280</x>
+      <y>160</y>
       <width>301</width>
       <height>71</height>
      </rect>
@@ -52,8 +52,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>120</y>
+      <x>30</x>
+      <y>160</y>
       <width>221</width>
       <height>71</height>
      </rect>
@@ -65,51 +65,74 @@
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>26</x>
+      <x>49</x>
       <y>9</y>
-      <width>531</width>
-      <height>91</height>
+      <width>511</width>
+      <height>131</height>
      </rect>
     </property>
-    <property name="tabletTracking">
-     <bool>false</bool>
-    </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::DefaultContextMenu</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size: 18px</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Box</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="midLineWidth">
-     <number>0</number>
-    </property>
-    <property name="text">
-     <string>Поздравляю с днем рождения. Пусть ангел-хранитель не подводит тебя, пусть жизнь состоит из успехов, счастливых моментов и праздников в кругу близких людей. Желаю здоровья и уверенности в себе!</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::RichText</enum>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-    <property name="wordWrap">
+    <property name="widgetResizable">
      <bool>true</bool>
     </property>
-    <property name="textInteractionFlags">
-     <set>Qt::TextEditable|Qt::TextSelectableByMouse</set>
-    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>509</width>
+       <height>129</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>511</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::DefaultContextMenu</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="text">
+       <string>Поздравляю с днем рождения. Пусть ангел-хранитель не подводит тебя, пусть жизнь состоит из успехов, счастливых моментов и праздников в кругу близких людей. Желаю здоровья и уверенности в себе!</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextEditable|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -117,7 +140,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>579</width>
+     <width>600</width>
      <height>21</height>
     </rect>
    </property>
