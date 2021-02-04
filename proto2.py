@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'proto.ui'
+# Form implementation generated from reading ui file 'proto2.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from main import *
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -30,27 +30,23 @@ class Ui_MainWindow(object):
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.SizeAllCursor))
         self.pushButton.setStyleSheet("background-color: orange;")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.clicked_button_start)
 
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(20, 120, 221, 71))
         self.pushButton_2.setStyleSheet("background-color: #ADFF2F")
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.clicked.connect(self.clicked_button_check)
-
 
         MainWindow.setCentralWidget(self.centralwidget)
+
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 456, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 578, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
         MainWindow.setMenuBar(self.menubar)
-
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.actionStart = QtWidgets.QAction(MainWindow)
         self.actionStart.setObjectName("actionStart")
         self.actionStop = QtWidgets.QAction(MainWindow)
@@ -68,7 +64,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Happy B-Day Sender"))
-
         self.pushButton.setText(_translate("MainWindow", "ПОЗДРАВИТЬ КОЛЛЕГ!"))
         self.pushButton_2.setText(_translate("MainWindow", "ВЫБРАТЬ ПОЗДРАВЛЕНИЕ"))
 
@@ -79,15 +74,6 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Ctrl+X"))
 
-    def clicked_button_start(self):
-        print('Запустили главную функцию программы')
-        start_work()
-        print('Успешно!')
-
-    def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
-        print('Ищем подходящее поздравление...')
-        choosen_message = create_bday_message()
-        print(choosen_message)
 
 if __name__ == "__main__":
     import sys
