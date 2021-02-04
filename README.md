@@ -22,7 +22,7 @@
 + Проверьте версию python на своем ПК с помощью команды `python --version` (для Windows)
 + Проверьте версию pip `python -m pip --version`. Если требуется обновить: `python -m pip install -U pip`
 + Установите необходимые зависимости `python -m pip install -r requirements.txt`
-+ Потребуется chromedriver для запуска скрипта
++ Потребуется добавить geckodriver в PATH
 
 Запуск скрипта:
 -----------------------------------

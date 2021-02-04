@@ -75,7 +75,6 @@ def check_bday_today_and_send_message(_browser):   # TODO: добавить но
 
 
 def start_work():
-
     url_vkp = 'https://vkp.sitesoft.su/'
     browser = webdriver.Firefox()   # for Linux
     # browser = webdriver.Chrome()
