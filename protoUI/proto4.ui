@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>300</height>
+    <height>299</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -59,19 +59,31 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #ADFF2F</string>
+     <string notr="true">background-color: #ADFF2F; font-size: 18px;</string>
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>30</y>
+      <y>20</y>
       <width>281</width>
-      <height>181</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="tabletTracking">
@@ -84,7 +96,7 @@
      <enum>Qt::DefaultContextMenu</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">font-size: 18px; text-position: center; text-align: center;</string>
+     <string notr="true">font-size: 16px; text-position: center; text-align: center;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -108,7 +120,7 @@
      <bool>false</bool>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
     <property name="wordWrap">
      <bool>true</bool>
