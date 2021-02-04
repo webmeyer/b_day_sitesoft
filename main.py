@@ -9,6 +9,12 @@ import time
 import random
 import os
 from gui import *
+from selenium import webdriver
+
+firefox_options = webdriver.FirefoxOptions()
+firefox_options.add_argument('--headless')
+firefox_options.add_argument('--no-sandbox')
+firefox_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36')
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -71,13 +77,15 @@ def check_bday_today_and_send_message(_browser):   # TODO: добавить но
 def start_work():
 
     url_vkp = 'https://vkp.sitesoft.su/'
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()   # for Linux
+    # browser = webdriver.Chrome()
     browser.get(url_vkp)
     browser.implicitly_wait(10)
 
     soup = BeautifulSoup(browser.page_source, 'html.parser')
     account_login(browser, account_get())
     check_bday_today_and_send_message(browser)
+    browser.close()
 
     print('Готово :)')
 
