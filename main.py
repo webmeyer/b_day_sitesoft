@@ -1,14 +1,15 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-import requests
 import time
 import random
 import os
-import emoji
+from test_ui import *
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -68,7 +69,8 @@ def check_bday_today_and_send_message(_browser):   # TODO: добавить но
             continue
 
 
-def main():
+def start_work():
+
     url_vkp = 'https://vkp.sitesoft.su/'
     browser = webdriver.Chrome()
     browser.get(url_vkp)
@@ -80,4 +82,14 @@ def main():
 
     print('Готово :)')
 
-main()
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+
