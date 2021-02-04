@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'proto.ui'
+# Form implementation generated from reading ui file 'proto3.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -9,61 +9,57 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from main import *
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 300)
+        MainWindow.resize(579, 238)
+        MainWindow.setMouseTracking(True)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: #696969")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.heightForWidth(True)
         self.centralwidget.setObjectName("centralwidget")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(260, 120, 301, 71))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setBold(False)
         font.setWeight(50)
-
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(280, 160, 301, 71))
         self.pushButton.setFont(font)
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
         self.pushButton.setStyleSheet("background-color: orange;")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.clicked_button_start)
-
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(30, 160, 221, 71))
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.OpenHandCursor))
+        self.pushButton_2.setGeometry(QtCore.QRect(20, 120, 221, 71))
         self.pushButton_2.setStyleSheet("background-color: #ADFF2F")
         self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_2.clicked.connect(self.clicked_button_check)
 
-        self.text_field = QtWidgets.QLabel(self.centralwidget)
-        self.text_field.setGeometry(QtCore.QRect(26, 9, 551, 131))
-        self.text_field.setObjectName("text_field")
-        self.text_field.setMaximumSize(QtCore.QSize(550, 130))
-        self.text_field.setStyleSheet("color: white; font-size: 18px;")
-        self.text_field.setTextInteractionFlags(QtCore.Qt.TextEditable|QtCore.Qt.TextSelectableByMouse)
-        self.text_field.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.text_field.setFrameShape(QtWidgets.QFrame.Box)
-        self.text_field.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.text_field.setScaledContents(True)
-        self.text_field.setWordWrap(True)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(26, 9, 531, 91))
+        self.label.setTabletTracking(False)
+        self.label.setStyleSheet("font-size: 18px")
+        self.label.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.label.setFrameShape(QtWidgets.QFrame.Box)
+        self.label.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.label.setLineWidth(1)
+        self.label.setMidLineWidth(0)
+        self.label.setTextFormat(QtCore.Qt.RichText)
+        self.label.setScaledContents(True)
+        self.label.setWordWrap(True)
+        self.label.setTextInteractionFlags(QtCore.Qt.TextEditable|QtCore.Qt.TextSelectableByMouse)
+        self.label.setObjectName("label")
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 456, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 579, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
         MainWindow.setMenuBar(self.menubar)
-
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.actionStart = QtWidgets.QAction(MainWindow)
         self.actionStart.setObjectName("actionStart")
         self.actionStop = QtWidgets.QAction(MainWindow)
@@ -81,10 +77,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Happy B-Day Sender"))
-
-        self.pushButton.setText(_translate("MainWindow", "ПОЗДРАВИТЬ АВТОМАТИЧЕСКИ"))
-        self.pushButton_2.setText(_translate("MainWindow", "ВЫБРАТЬ И ПОЗДРАВИТЬ ВРУЧНУЮ"))
-
+        self.pushButton.setText(_translate("MainWindow", "ПОЗДРАВИТЬ КОЛЛЕГ!"))
+        self.pushButton_2.setText(_translate("MainWindow", "PushButton"))
+        self.label.setText(_translate("MainWindow", "Поздравляю с днем рождения. Пусть ангел-хранитель не подводит тебя, пусть жизнь состоит из успехов, счастливых моментов и праздников в кругу близких людей. Желаю здоровья и уверенности в себе!"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionStart.setText(_translate("MainWindow", "Start"))
         self.actionStart.setShortcut(_translate("MainWindow", "Ctrl+S"))
@@ -92,20 +87,6 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Ctrl+X"))
 
-    def clicked_button_start(self):
-        print('Запустили главную функцию программы')
-        start_work()
-        print('Успешно!')
-
-    def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
-        print('Ищем подходящее поздравление...')
-        choosen_message = create_bday_message()
-        print(choosen_message)
-        self.text_field.setText(choosen_message)
-        self.update_text_field()
-
-    def update_text_field(self):
-        self.text_field.adjustSize()
 
 if __name__ == "__main__":
     import sys
