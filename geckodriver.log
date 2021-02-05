@@ -1,0 +1,30 @@
+1612443208684	geckodriver	INFO	Listening on 127.0.0.1:37769
+1612443209706	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJNZgPu"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612443211491	Marionette	INFO	Listening on port 46539
+1612443211629	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612443211651	Marionette	ERROR	[15] No reply from Marionette:Register
+1612443218003	Marionette	INFO	Stopped listening on port 46539
+1612443240428	geckodriver	INFO	Listening on 127.0.0.1:51027
+1612443240447	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRR8OKH"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612443242163	Marionette	INFO	Listening on port 34383
+1612443242302	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612443242314	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js?1567667142, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1612443278356	Marionette	INFO	Stopped listening on port 34383
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612443444517	Marionette	INFO	Listening on port 37723
+1612443444685	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612443444700	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js?1567667142, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1612443459762	Marionette	INFO	Stopped listening on port 37723
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1612444793545	Marionette	INFO	Listening on port 42699
+1612444793688	Marionette	WARN	TLS certificate errors will be ignored for this session
+1612444793698	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js?1567667142, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1612444809285	Marionette	INFO	Stopped listening on port 42699
