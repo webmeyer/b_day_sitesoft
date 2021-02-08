@@ -91,18 +91,22 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Ctrl+X"))
 
+    def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
+        try:
+            print('Выбери подходящее поздравление...')
+            choosen_message = create_bday_message(create_list_messages(), USED_LIST)
+            print(choosen_message)
+            self.text_field.setText(choosen_message)
+            self.update_text_field()
+        except IndexError:
+            print('Закончились поздравления в файле "bday_text"')
+        else:
+            return choosen_message
+
     def clicked_button_start(self):
         print('Запустили главную функцию программы')
         start_work()
         print('Успешно!')
-
-    def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
-        print('Выбери подходящее поздравление...')
-        choosen_message = create_bday_message(create_list_messages())
-        print(choosen_message)
-        self.text_field.setText(choosen_message)
-        self.update_text_field()
-        return choosen_message
 
     def update_text_field(self):
         self.text_field.adjustSize()

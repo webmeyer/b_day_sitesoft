@@ -2,4 +2,5 @@
 chromedriver.exe
 chromedriver
 geckodriver
+bday_text_copy.txt
 # python -m PyQt5.uic.pyuic -x [FILENAME].ui -o [FILENAME].py

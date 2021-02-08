@@ -21,6 +21,9 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36")
 
+FOLDER = os.getcwd()  # путь к рабочей директории
+USED_LIST = []
+
 def account_get():
     folder = os.getcwd()  # путь к рабочей директории
     file = open(folder + '/acc.txt', 'r')  # файл с аккаунтами
@@ -43,19 +46,26 @@ def account_login(_browser, account):   # ЛОГИНИМСЯ В АКК
 
 def create_list_messages():
     bday_textlist = []
-    folder = os.getcwd()  # путь к рабочей директории
-    file = open(folder + '/bday_text.txt', 'r', encoding='utf-8')  # файл с поздравлениями
-    print(file)
+    file = open(FOLDER + '/bday_text.txt', 'r', encoding='utf-8')  # файл с поздравлениями
     for _text in file.readlines():
         bday_textlist.append(_text)
     return bday_textlist
 
-def create_bday_message(list_messages):   # Пока не используется, потому что нет нормальных поздравлений. Надо найти ресурс и спарсить в список.
+def create_bday_message(list_messages,USED_LIST):   # Пока не используется, потому что нет нормальных поздравлений. Надо найти ресурс и спарсить в список.
     bday_message_raw = random.choice(list_messages)
     bday_message = bday_message_raw.replace("&nbsp;", " ")
     for string in list_messages:   # Удаляем поздравление из списка
         if bday_message_raw in string:
+            USED_LIST.append(string)
             list_messages.remove(string)
+    file = open(FOLDER + '/bday_text.txt', 'w', encoding='utf-8')
+    for line in list_messages:
+        file.write(line)
+    file.close()
+
+    print('Осталось поздравлений:', len(list_messages))
+    print('Использовано:', len(USED_LIST))
+
     return bday_message
 
 def check_bday_today_and_send_message(_browser, _url):   # Для ручного режима
