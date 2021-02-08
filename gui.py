@@ -97,11 +97,12 @@ class Ui_MainWindow(object):
         print('Успешно!')
 
     def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
-        print('Ищем подходящее поздравление...')
-        choosen_message = create_bday_message()
+        print('Выбери подходящее поздравление...')
+        choosen_message = create_bday_message(create_list_messages())
         print(choosen_message)
         self.text_field.setText(choosen_message)
         self.update_text_field()
+        return choosen_message
 
     def update_text_field(self):
         self.text_field.adjustSize()

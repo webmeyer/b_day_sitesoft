@@ -41,23 +41,26 @@ def account_login(_browser, account):   # ЛОГИНИМСЯ В АКК
     _browser.find_element_by_xpath('//button[@class="button t-blue s-a"]').click()
     time.sleep(10)
 
-def create_bday_message():   # Пока не используется, потому что нет нормальных поздравлений. Надо найти ресурс и спарсить в список.
+def create_list_messages():
     bday_textlist = []
     folder = os.getcwd()  # путь к рабочей директории
     file = open(folder + '/bday_text.txt', 'r', encoding='utf-8')  # файл с поздравлениями
+    print(file)
     for _text in file.readlines():
         bday_textlist.append(_text)
-    bday_message_raw = random.choice(bday_textlist)
+    return bday_textlist
+
+def create_bday_message(list_messages):   # Пока не используется, потому что нет нормальных поздравлений. Надо найти ресурс и спарсить в список.
+    bday_message_raw = random.choice(list_messages)
     bday_message = bday_message_raw.replace("&nbsp;", " ")
-    for string in bday_textlist:   # Удаляем поздравление из списка
+    for string in list_messages:   # Удаляем поздравление из списка
         if bday_message_raw in string:
-            bday_textlist.remove(string)
+            list_messages.remove(string)
     return bday_message
 
 def check_bday_today_and_send_message(_browser, _url):   # Для ручного режима
     soup = BeautifulSoup(_browser.page_source, 'html.parser')
     orange_blocks = soup.findAll('div', class_='c-block cg-2 t-2 t-orange message')
-    bday_list = []
     for block in orange_blocks:
         bday_today = block.find('div', class_='b-important-theme').text
         bday_name = block.find('div', class_='b-important-title').text
@@ -70,7 +73,7 @@ def check_bday_today_and_send_message(_browser, _url):   # Для ручного
 def start_work():
     url_vkp = 'https://vkp.sitesoft.su/'
     # browser = webdriver.Firefox()   # for Linux
-    browser = webdriver.Chrome(options=chrome_options)
+    browser = webdriver.Chrome()
     browser.get(url_vkp)
     browser.implicitly_wait(10)
 
