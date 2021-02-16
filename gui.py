@@ -11,6 +11,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from main import *
 
+#options
+MESG = 'С ДР!'
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -93,15 +96,16 @@ class Ui_MainWindow(object):
 
     def clicked_button_check(self):   # Пока работает в ручном режиме, надо подумать как вынести результат с функции в другой модуль (main)
         try:
+            global MESG
             print('Выбери подходящее поздравление...')
-            choosen_message = create_bday_message(create_list_messages(), USED_LIST)
-            print(choosen_message)
-            self.text_field.setText(choosen_message)
+            MESG = create_bday_message(create_list_messages(), USED_LIST)
+            print(MESG)
+            self.text_field.setText(MESG)
             self.update_text_field()
         except IndexError:
             print('Закончились поздравления в файле "bday_text"')
         else:
-            return choosen_message
+            return MESG
 
     def clicked_button_start(self):
         print('Запустили главную функцию программы')
