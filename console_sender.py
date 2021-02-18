@@ -58,7 +58,7 @@ def check_bday_today_and_send_message(_browser, _url):   # Для ручного
 
 def start_work():
     url_vkp = 'https://vkp.sitesoft.su/'
-    browser = webdriver.Chrome(options=firefox_options)
+    browser = webdriver.Firefox(options=firefox_options)
     browser.get(url_vkp)
     browser.implicitly_wait(10)
 
