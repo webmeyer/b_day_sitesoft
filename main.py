@@ -75,7 +75,7 @@ def check_bday_today_and_send_message(_browser, _url):   # Для ручного
         bday_today = block.find('div', class_='b-important-theme').text
         bday_name = block.find('div', class_='b-important-title').text
         if bday_today == 'Сегодня отмечает день рождения':
-            _browser.find_element_by_xpath("//div[@class='b-comment']//textarea[@name='message_text']").send_keys(MESG)
+            _browser.find_element_by_xpath("//div[@class='b-comment']//textarea[@name='message_text']").send_keys('С Днём Рождения!')
             print('ОТПРАВЛЯЕМ ЭТО: ', MESG)
             _browser.find_element_by_xpath("//div[@class='b-comment']//input[@type='submit']").click()
             time.sleep(2)
