@@ -76,7 +76,6 @@ def check_bday_today_and_send_message(_browser, _url):   # Для ручного
         bday_name = block.find('div', class_='b-important-title').text
         if bday_today == 'Сегодня отмечает день рождения':
             _browser.find_element_by_xpath("//div[@class='b-comment']//textarea[@name='message_text']").send_keys('С Днём Рождения!')
-            print('ОТПРАВЛЯЕМ ЭТО: ', MESG)
             _browser.find_element_by_xpath("//div[@class='b-comment']//input[@type='submit']").click()
             time.sleep(2)
             print('Отправил поздравление!', bday_name)
@@ -84,7 +83,7 @@ def check_bday_today_and_send_message(_browser, _url):   # Для ручного
 def start_work():
     url_vkp = 'https://vkp.sitesoft.su/'
     # browser = webdriver.Firefox()   # for Linux
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(options=chrome_options)
     browser.get(url_vkp)
     browser.implicitly_wait(10)
 

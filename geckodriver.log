@@ -83,3 +83,6 @@ JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js, line 2: Usi
 JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js?1567667142, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
 JavaScript warning: https://vkp.sitesoft.su/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
 1614125176603	Marionette	INFO	Stopped listening on port 62855
+1614140360545	geckodriver	INFO	Listening on 127.0.0.1:55386
+1614140363600	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--no-sandbox" "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" "-foreground" "-no-remote" "-profile" "C:\\Users\\DDF28~1.MEY\\AppData\\Local\\Temp\\rust_mozprofileTdRYnX"
+*** You are running in headless mode.
